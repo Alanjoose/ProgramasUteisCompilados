@@ -4,75 +4,71 @@
     @Language: C++;
 */
 #include <stdio.h>
-#include <cmath>
+#include <iostream>
+using namespace std;
 
 int main()
 {
-    int choose, numberOne, numberTwo;
-    do
+    int option;
+    int numberA;
+    int numberB;
+
+while(option != 0)
+{
+    std::cout << "\n<<< Linux Useful Calculator >>>" << endl;
+    std::cout << "Options >>>" << endl;
+    std::cout << "(1) Sum." << endl;
+    std::cout << "(2) Sub." << endl;
+    std::cout << "(3) Plus." << endl;
+    std::cout << "(4) By." << endl;
+    std::cout << "(0) Exit." << endl;
+    std::cout << "Select An Option : " << endl;
+    std::cin >> option;
+
+   if(option > 4 || option < 0)
+   {
+       std::cout << "Please select only options in the menu." << endl;
+   }
+
+    switch(option)
     {
+        case 1:
+        std::cout << "Insert the number A :" << endl;
+        std::cin >> numberA;
+        std::cout << "Insert the number B :" << endl;
+        std::cin >> numberB;
+        std::cout << "The sum is : " << numberA + numberB << endl;
+        break;
 
-    printf("(Useful Basic Calc V:1.0)\n");
-    printf("Options :\n");
-    printf("(1) Sum.\n");
-    printf("(2) Minus.\n");
-    printf("(3) Plus.\n");
-    printf( "(4) By.\n");
-    printf("(0) Exit.");
-    printf( "\nSelect an Option : \n");
-    scanf("%i", &choose);
+        case 2:
+        std::cout << "Insert the number A :" << endl;
+        std::cin >> numberA;
+        std::cout << "Insert the number B :" << endl;
+        std::cin >> numberB;
+        std::cout << "The sub is : " << numberA - numberB << endl;
+        break;
 
-        switch(choose)
+        case 3:
+        std::cout << "Insert the number A :" << endl;
+        std::cin >> numberA;
+        std::cout << "Insert the number B :" << endl;
+        std::cin >> numberB;
+        std::cout << "The plus is : " << numberA * numberB << endl;
+        break;
+
+        case 4:
+        std::cout << "Insert the number A :" << endl;
+        std::cin >> numberA;
+        std::cout << "Insert the number B :" << endl;
+        std::cin >> numberB;
+        if(numberA == 0|| numberB == 0)
         {
-            case 1:
-            printf( "Sum selected.\n");
-            printf( "Enter the number One :\n");
-            scanf("%i", &numberOne);
-            printf ( "Enter the number Two :\n");
-            scanf("%i", &numberTwo);
-            printf("%s%i", "Result : ", numberOne + numberTwo);
-            printf("\n\n");
-            break;
-
-            case 2:
-            printf("Minus selected.\n");
-            printf( "Enter the number One :\n");
-            scanf("%i", &numberOne);
-            printf ( "Enter the number Two :");
-            scanf("%i", &numberTwo);
-            printf("%s%i", "Result : ", numberOne - numberTwo);
-            printf("\n");
-            break;
-            
-            case 3:
-            printf( "Plus selected.\n");
-            printf( "Enter the number One :\n");
-            scanf("%i", &numberOne);
-            printf( "Enter the number Two :\n");
-            scanf("%i", &numberTwo);
-            printf("%s%i", "Result : ", numberOne * numberTwo);
-            printf("\n\n");
-            break;
-
-            case 4:
-            printf( "By selected.\n");
-            printf( "Enter the number One :\n");
-            scanf("%i", &numberOne);
-            printf( "Enter the number Two :\n");
-            scanf("%i", &numberTwo);
-            if(numberOne || numberTwo == 0)
-            {
-            printf("Cannot divide by zero");
-            printf("\n\n");
-            }
-            else
-            {
-            printf("%s%i", "Result : ", numberOne / numberTwo);
-            printf("\n\n");
-            }
+            std::cout << "Could'nt divide by zero!" << endl;
             break;
         }
+        std::cout << "The by is :" << numberA / numberB << endl;
+        break;
     }
-    while(choose != 0);
+}
     return 0;
 }
